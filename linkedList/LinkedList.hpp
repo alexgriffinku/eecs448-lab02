@@ -114,9 +114,35 @@ bool LinkedList<T>::removeBack()
 	Node<T>* secondintoLast = nullptr;
 	bool isRemoved = false;
 
-	/** TODO 
-		Fix this method
-	*/
+        if(isEmpty())
+	  {
+	    return false;
+	  }
+
+	else if(size() == 1)
+	  {
+	    removeFront();
+	  }
+	else
+	  {
+	    lastNode = m_front;
+	    while(lastNode->getNext() != nullptr)
+	      {
+		lastNode = lastNode->getNext();
+	      }
+	    //at this point lastNode points to the last node
+
+	    secondintoLast = m_front;
+	    while(secondintoLast->getNext() != lastNode)
+	      {
+		secondintoLast = secondintoLast->getNext();
+	      }
+	    //now secondintoLast points to second to last node
+
+	    secondintoLast.setNext(nullptr);
+	    delete lastNode;
+	    lastNode = nullptr;
+	  }
 
 	return(isRemoved);
 }	
