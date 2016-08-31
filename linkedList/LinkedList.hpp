@@ -1,6 +1,6 @@
 /**
-*	@author 
-*	@date 
+*	@author John Gibbons / Alex Griffin
+*	@date 8/31/16
 *	@file LinkedList.hpp
 *	@brief Implementation file for templated LinkedList class
 */
